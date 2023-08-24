@@ -11,6 +11,7 @@ import Blivfrivillig from "./Components/Blivfrivillig";
 import Dyrinoed from "./Components/Dyrinoed";
 import Nyhedsbrev from "./Components/Nyhedsbrev";
 import Omos from "./Components/Omos";
+import Detaljer from "./Components/Detaljer";
 
 // import About from "./Templates/About";
 
@@ -26,6 +27,8 @@ export const router = createBrowserRouter(
             <Route path="/Dyrinoed" element={<Dyrinoed />} />
             <Route path="/Nyhedsbrev" element={<Nyhedsbrev />} />
             <Route path="/Dyrhosos" element={<Dyrhosos />} />
+            <Route path="/Detaljer/:id" element={<Detaljer />} />
+            
             
 
             {/* <Route index element={<Home/>} /> */}

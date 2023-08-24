@@ -7,7 +7,7 @@ const Dyrhosos = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
     // <img src={data.image.url} alt="medarbejder" />
-    
+
     useEffect(() => {
         fetch(`http://localhost:4000/api/v1/animals`)
             .then((response) => response.json())
@@ -27,13 +27,22 @@ const Dyrhosos = () => {
                     <p className="">{animals.length} dyr</p>
                     <div className="containerAnimal">
                         {animals.map((data) => (
-                            <article className="articleAnimal" key={data.id}>
-                                <img className="cover animalImg" src={data.asset.url} alt={data.name} />
-                                <div className="">
-                                <h3 className="">{data.name}</h3>
-                                <p className="">{data.description}</p>
-                                </div>
-                            </article>
+                            <Link className="" to={`/Detaljer/${data.id}`}>
+                                <article
+                                    className="articleAnimal"
+                                    key={data.id}
+                                >
+                                    <img
+                                        className="cover animalImg"
+                                        src={data.asset.url}
+                                        alt={data.name}
+                                    />
+                                    <div className="">
+                                        <h3 className="">{data.name}</h3>
+                                        <p className="">{data.description}</p>
+                                    </div>
+                                </article>
+                            </Link>
                         ))}
                     </div>
                 </section>

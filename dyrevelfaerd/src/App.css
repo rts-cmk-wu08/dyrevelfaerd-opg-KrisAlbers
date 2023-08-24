@@ -25,6 +25,10 @@ a {
   min-width: 80vw;
 }
 
+.containerContent80 {
+  width: 80vw;
+}
+
 .cover {
   object-fit: cover;
 }
@@ -96,7 +100,6 @@ a {
 
 /* MAIN */
 .main {
-  border: #61dafb solid 1px;
   width: 100vw;
 }
 
