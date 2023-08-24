@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Adopter from "./Adopter";
 
 const Dyrhosos = () => {
     const [animals, setAnimals] = useState();
@@ -21,6 +22,7 @@ const Dyrhosos = () => {
         <p>loading...</p>
     ) : (
         <>
+            <Adopter />
             <div className="containerBody">
                 <section className="containerContent">
                     <h1 className="">Dyr hos os</h1>

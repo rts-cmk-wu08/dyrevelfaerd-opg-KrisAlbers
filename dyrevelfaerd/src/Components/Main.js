@@ -17,8 +17,6 @@ const Main = () => {
             <Dyrinoed/>
             <Nyhedsbrev/>
             <Dyrhosos/>
-            
-
         </main>
     );
 };

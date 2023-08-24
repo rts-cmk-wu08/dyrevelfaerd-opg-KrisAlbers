@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+body {
+  font-family: "Oswald", sans-serif;
+}
+
 
 a {
   text-decoration: none;
@@ -33,7 +37,17 @@ a {
   object-fit: cover;
 }
 
+.flex {
+  display: flex;
+}
 
+.bgBlue {
+  background-color: #61dafb;
+}
+
+.bgWhite {
+  background-color: white;
+}
 
 
 
@@ -103,6 +117,30 @@ a {
   width: 100vw;
 }
 
+/* OM OS */
+.articleOmos {
+  width: 24vw;
+  margin: 0 0 1.5vw 0;
+}
+
+/* Frivillig */
+
+.frivilligH2 {
+  margin: 1vw;
+}
+.imgFrivillig {
+  width: 24vw;
+  margin: 0 0 1.5vw 0;
+}
+
+.articleFriv {
+  width: 24vw;
+  margin: 0.5vw;
+  padding: 1vw;
+}
+
+
+
 /* Dyr hos os */
 .animalImg {
   width: 14vw;
@@ -123,6 +161,11 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+
+
+
+
 
 
 /* FOOTER */
