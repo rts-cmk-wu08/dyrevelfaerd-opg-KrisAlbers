@@ -9,7 +9,7 @@ import Header from "./Components/Header";
 import Dyrhosos from "./Components/Dyrhosos";
 import Blivfrivillig from "./Components/Blivfrivillig";
 import Dyrinoed from "./Components/Dyrinoed";
-import Nyhedsbrev from "./Components/Nyhedsbrev";
+import Nyhedsbrev, {action as nyhedsbrevAction} from "./Components/Nyhedsbrev";
 import Omos from "./Components/Omos";
 import Detaljer from "./Components/Detaljer";
 
@@ -25,7 +25,7 @@ export const router = createBrowserRouter(
             <Route path="/Omos" element={<Omos />} />
             <Route path="/Blivfrivillig" element={<Blivfrivillig />} />
             <Route path="/Dyrinoed" element={<Dyrinoed />} />
-            <Route path="/Nyhedsbrev" element={<Nyhedsbrev />} />
+            <Route path="/Nyhedsbrev" element={<Nyhedsbrev />} action={nyhedsbrevAction} />
             <Route path="/Dyrhosos" element={<Dyrhosos />} />
             <Route path="/Detaljer/:id" element={<Detaljer />} />
             

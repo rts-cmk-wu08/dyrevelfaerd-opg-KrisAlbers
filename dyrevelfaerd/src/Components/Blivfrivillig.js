@@ -6,10 +6,10 @@ const Blivfrivillig = () => {
     const [animals, setAnimals] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
-    // <img src={data.image.url} alt="medarbejder" />
+
 
     useEffect(() => {
-        fetch(`http://localhost:4000/api/v1/volunteers`)
+         fetch(`http://localhost:4000/api/v1/volunteers`)
             .then((response) => response.json())
             //  .then((data) => console.log(data))
             .then((data) => setAnimals(data))
@@ -24,7 +24,7 @@ const Blivfrivillig = () => {
             <div className="containerBody bgBlue">
                 <section className="containerContent">
                     <h2 className="frivilligH2">Bliv Frivillig</h2>
-                    <div className="flex">
+                    <div className="flex overflow">
                         {animals.map((data) => (
                             <article
                                 className="articleFriv bgWhite"

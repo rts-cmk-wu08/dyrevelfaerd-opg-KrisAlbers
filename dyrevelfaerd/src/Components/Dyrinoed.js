@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import LogIn from "./LogIn";
 
 const Dyrinoed = () => {
     const [contents, setContents] = useState();
@@ -31,6 +32,7 @@ const Dyrinoed = () => {
                     <p className="whiteText">{contents.content}</p>
                 </div>
             </div>
+            <LogIn/>
         </>
     );
 };

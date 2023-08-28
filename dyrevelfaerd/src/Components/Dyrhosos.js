@@ -7,7 +7,6 @@ const Dyrhosos = () => {
     const [animals, setAnimals] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
-    // <img src={data.image.url} alt="medarbejder" />
 
     useEffect(() => {
         fetch(`http://localhost:4000/api/v1/animals`)
@@ -29,22 +28,24 @@ const Dyrhosos = () => {
                     <p className="">{animals.length} dyr</p>
                     <div className="containerAnimal">
                         {animals.map((data) => (
-                            <Link className="" to={`/Detaljer/${data.id}`}>
-                                <article
+                            <article className="articleAnimal" key={data.id}>
+                                <Link
                                     className="articleAnimal"
-                                    key={data.id}
+                                    to={`/Detaljer/${data.id}`}
                                 >
                                     <img
                                         className="cover animalImg"
                                         src={data.asset.url}
                                         alt={data.name}
                                     />
-                                    <div className="">
+                                    <div className="textAnimal">
                                         <h3 className="">{data.name}</h3>
-                                        <p className="">{data.description}</p>
+                                        <p className="textAnimal">
+                                            {data.description}
+                                        </p>
                                     </div>
-                                </article>
-                            </Link>
+                                </Link>
+                            </article>
                         ))}
                     </div>
                 </section>
