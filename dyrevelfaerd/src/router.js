@@ -25,7 +25,7 @@ export const router = createBrowserRouter(
             <Route path="/Omos" element={<Omos />} />
             <Route path="/Blivfrivillig" element={<Blivfrivillig />} />
             <Route path="/Dyrinoed" element={<Dyrinoed />} />
-            <Route path="/Nyhedsbrev" element={<Nyhedsbrev />} action={nyhedsbrevAction} />
+            <Route path="/Nyhedsbrev" element={<Nyhedsbrev />} />
             <Route path="/Dyrhosos" element={<Dyrhosos />} />
             <Route path="/Detaljer/:id" element={<Detaljer />} />
             
