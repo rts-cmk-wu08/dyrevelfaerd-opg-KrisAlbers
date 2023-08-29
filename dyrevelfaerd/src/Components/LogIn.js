@@ -16,10 +16,11 @@ const LogIn = () => {
   const location = useLocation()
 
   const from = location.state?.from?.pathname || "/"
+  
 
   const schema = z
     .object({
-      email: z.string().email("Your email is not valid!"),
+        username: z.string().min(1, { message: "Password is required!" }),
       password: z.string().min(1, { message: "Password is required!" }),
     })
 
@@ -36,8 +37,8 @@ const LogIn = () => {
 
     if (validated.success) {
       // poste data til axios
-      let response = await axios.post("http://localhost:4000/login", {
-        email: validated.data.email,
+      let response = await axios.post("http://localhost:4000/api/v1/users", {
+        username: validated.data.username,
         password: validated.data.password
       })
       // console.log(response.data)
@@ -49,10 +50,29 @@ const LogIn = () => {
 
   };
   return (
+    <div className="containerBody">
+                <section className="containerContent80">
+                    <h2 className="">SÅDAN HJÆLPER VI DYR</h2>
+                    <p>
+                        Dyrenes Beskyttelse har en lang og stolt tradition som
+                        forkæmper for det gode dyreliv og hjælp til nødstedte og
+                        vanrøgtede dyr. Vores mission er at hjælpe dyr i nød,
+                        stoppe overgreb mod dyr og kæmpe for et respektfuldt og
+                        bæredygtigt forhold mellem dyr, mennesker og natur. Mens
+                        vi forbedrer forholdene for dyr gennem politisk
+                        interessevaretagelse og vidensformidling, så yder vi
+                        hjælp til dyrene her og nu gennem dyreredning, pleje og
+                        formidling af dyr.
+                    </p>
+                    <div className="marginTB">
+                        <p>
+                            Er du frivillig eller medarbejder kan du logge ind
+                            her
+                        </p>
     <Form method="post" onSubmit={handleSubmit} style={{ marginTop: "1rem" }}>
       <div className="formgroup">
-        <input type="email" name="email" id="email" placeholder="Email" />
-        {errors?.email && (<p style={{ color: "red" }}>{errors.email}</p>)}
+        <input type="username" name="username" id="username" placeholder="username" />
+        {errors?.username && (<p style={{ color: "red" }}>{errors.username}</p>)}
       </div>
       <div className="formgroup">
         {/* <p style={{ display: "flex", alignItems: "center", gap: "1em", fontSize: "10px", margin: "0", justifyContent: "center" }}>Show password{showPassword ? <FaEye onClick={HidePass} /> : <FaEyeSlash onClick={HidePass} />}</p> */}
@@ -63,6 +83,9 @@ const LogIn = () => {
       <button type="submit" style={{ marginTop: "1rem" }}>Log In</button>
 
     </Form>
+    </div>
+                </section>
+            </div>
   );
 };
 
